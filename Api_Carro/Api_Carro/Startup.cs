@@ -1,3 +1,7 @@
+using Carro.Core;
+using Carro.Core.Interface;
+using Carro.Repository;
+using Carro.Repository.Interface;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -24,6 +28,8 @@ namespace Api_Carro
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            services.AddSingleton<ICarService, CarService>();
+            services.AddSingleton<ICarRepository, CarRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
