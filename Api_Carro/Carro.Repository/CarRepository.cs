@@ -15,7 +15,7 @@ namespace Carro.Repository
 
         public CarRepository()
         {
-            var client = new MongoClient(@"Mongodb://localhost:27017");
+            var client = new MongoClient("@Mongodb://localhost:27017");
             var database = client.GetDatabase("DBCRUD");
             _collectionCar = database.GetCollection<Car>("Car");
         }
